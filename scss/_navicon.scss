@@ -1,0 +1,90 @@
+
+
+
+/* Mobile Nav Icon */
+.navIcon {
+	display: block;
+	width: 30px;
+	height: 25px;
+	margin: .95rem auto 0 auto;
+	cursor: pointer;
+	@include rotate(0deg);
+
+	p {
+		font-size: .6rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: $black;
+		padding: 1.2rem 0 0 0;
+		margin: 0;
+	}
+
+	span {
+		background: $black;
+		display: block;
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		opacity: 1;
+		left: 0;
+		@include rotate(0deg);
+		@include transition(all 0.15s ease);
+
+		&:nth-child(1) {
+			top: 0px;
+			@include transform-origin(center right);
+			@include transform(scale(.6, 1));
+		}
+		&:nth-child(2) {
+			top: 8px;
+			@include transform-origin(center right);
+			@include transform(scale(.9, 1));
+		}
+		&:nth-child(3) {
+			top: 16px;
+			@include transform-origin(center right);
+			@include transform(scale(.7, 1));
+		}
+	}
+}
+
+
+
+/* Icon Hover */
+.navIcon:hover span:nth-child(1) {
+	top: 0px;
+	left: 0px;
+	@include transform(scale(.9, 1));
+}
+
+.navIcon:hover span:nth-child(2) {
+	top: 8px;
+	left: 0px;
+	@include transform(scale(.9, 1));
+}
+
+.navIcon:hover span:nth-child(3) {
+	top: 16px;
+	left: 0px;
+	@include transform(scale(.9, 1));
+}
+
+
+
+/* Icon Open */
+.navIcon.open span:nth-child(1) {
+	top: 0px;
+	left: 0px;
+	@include rotate(-45deg);
+}
+.navIcon.open span:nth-child(2) {
+	top: 8px;	
+	@include transform(scale(0, 1));
+}
+.navIcon.open span:nth-child(3) {
+	top: 21px;
+	left: 0px;
+	@include rotate(45deg);
+}
+
+

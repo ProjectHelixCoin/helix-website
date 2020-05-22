@@ -1,0 +1,1016 @@
+
+
+
+@import "_reset";
+@import "_setup";
+@import "_navicon";
+@import "_buttons";
+
+
+
+/* --------------------
+	GENERAL
+-------------------- */
+* {
+	padding: 0;
+	margin: 0;
+	@include box-sizing(border-box);
+	@include border-radius(0);
+}
+html {
+	background: $white;
+	font-size: 100%;
+}
+body {
+	font-family: $nunito;
+	font-size: 1.1rem;
+	font-weight: 300;
+	line-height: 1.8rem;
+	letter-spacing: .5px;
+	color: $grey;
+}
+a, a:link,
+a:active,
+a:visited {
+	color: $black;
+	text-decoration: none;
+	@include transition(all 0.25s ease);
+}
+a:hover {
+	text-decoration: none;
+}
+::selection {
+	background: $yellow;
+	color: $white;
+}
+::-moz-selection {
+	background: $yellow; /* Firefox */
+	color: $white;
+}
+h1, h2, h3 {
+	font-family: $nunito;
+	font-weight: 900;
+	color: $black;
+}
+h1 {
+	font-size: 2.2rem;
+	line-height: 2.8rem;
+	margin: 0 0 1rem 0;
+}
+h2 {
+	font-size: 2.2rem;
+	margin: 0 0 3rem 0;
+}
+h3 {
+	font-size: 1.2rem;
+	margin: 0 0 1rem 0;
+}
+p {
+	margin: 0 0 2rem 0;
+}
+strong {
+	font-family: $nunito;
+	font-weight: 900;
+	color: $black;
+}
+em {
+	font-style: italic;
+}
+hr {
+	border-top: 1px solid $border;
+	margin: .5rem 0;
+}
+.sr-only {
+	font-size: 1.5rem;
+}
+.hide {
+	display: none;
+}
+.block {
+	display: inline;
+}
+.lowercase {
+	text-transform: lowercase;
+}
+.underline {
+	color: $black;
+	border-bottom: 1px solid $black;
+}
+
+@media all and (min-width: 960px) {
+	body {
+		font-size: 1.2rem;
+	}
+	.block {
+		display: block;
+	}
+}
+
+
+
+/* --------------------
+	HEADER
+-------------------- */
+.headerContainer {
+	background: rgba(255,255,255,1);
+	width: 100%;
+	padding: 1rem 0 .5rem 0;
+	position: fixed;
+	top: 0;
+	z-index: 99999;
+	cursor: default;
+	.inner {
+		width: 95%;
+		display: flex;
+		flex-flow: row wrap;
+		margin: 0 auto;
+		.headerLogo {
+			width: 20%;
+			position: relative;
+			z-index: 100;
+			img {
+				width: 160px;
+			}
+		}
+		.mobileBtn {
+			display: block;
+			position: relative;
+			margin: 0 0 0 auto;
+		}
+		.mainNav {
+			background: $white;
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			padding: 7rem 0 0 10%;
+			margin: 0 0 0 -110%;
+			@include transform(translateX(-110%));
+			@include transition(all 0.3s ease);
+			ul li {
+				display: block;
+				a {
+					font-family: $nunito;
+					font-size: 1rem;
+					font-weight: 900;
+					line-height: 2.5rem;
+					letter-spacing: 1px;
+					text-transform: uppercase;
+					color: $black;
+					padding: 0 .5rem;
+					margin: 0 auto;
+					&:hover, &.active {
+						color: $yellow;
+					}
+				}
+			}
+			&.is-visible {
+				margin: 0;
+				@include transform(translateX(0));
+			}
+		}
+	}
+}
+
+@media all and (min-width: 1054px) {
+	.headerContainer {
+		.inner {
+			.headerLogo {
+				width: auto;
+				img {
+					width: 190px;
+				}
+			}
+			.mobileBtn {
+				display: none;
+			}
+			.mainNav {
+				width: auto;
+				position: inherit;
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: flex-end;
+				align-content: space-between;
+				align-items: center;
+				padding: 0;
+				margin: 1rem 0 0 auto;
+				@include transform(translateX(0));
+				ul li {
+					display: inline-block;
+					a {
+						font-size: .7rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 1168px) {
+	.headerContainer {
+		.inner {
+			.headerLogo {
+				img {
+					width: 200px;
+				}
+			}
+			.mainNav {
+				ul li {
+					a {
+						font-size: .8rem
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+/* --------------------
+	MAIN
+-------------------- */
+.mainContainer {
+	background: $white;
+	width: 100%;
+	text-align: center;
+	padding: 0;
+	margin: 0 auto 400px auto;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	&.home {
+		background: url(../images/bg-dna-helix.jpg) top center no-repeat $white;
+		background-size: 200%;
+		background-position: 50% 100px;
+	}
+}
+
+@media all and (min-width: 960px) {
+	.mainContainer {
+		&.home {
+			background-size: 100%;
+			background-position: 0 100px;
+		}
+	}
+}
+
+
+
+/* --------------------
+	HOME
+-------------------- */
+#home {
+	.home {
+		width: 85%;
+		padding: 8rem 0 5rem 0;
+		margin: 0 auto;
+		h1 {
+			font-size: 1.5rem;
+			font-weight: 900;
+			line-height: 2.2rem;
+			margin: 0 auto 2rem auto;
+		}
+		h2 {
+			font-size: 1.2rem;
+			font-weight: 700;
+			line-height: 2rem;
+			margin: 0 auto 4rem auto;
+		}
+		p {
+			font-size: 1rem;
+		}
+		#timer {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-around;
+			align-content: space-between;
+			align-items: center;
+			margin: 4rem auto 0 auto;
+			#days, #hours, #minutes, #seconds {
+				background: rgba(255,255,255,.5);
+				width: 42%;
+				font-size: 1.5rem;
+				font-weight: 700;
+				text-align: center;
+				color: $black;
+				border: 4px solid $black;
+				padding: 2rem;
+				margin: 0 auto 2rem auto;
+			}
+			span {
+				display: block;
+				font-size: 1rem;
+				font-weight: 300;
+				text-align: center;
+				color: $grey;
+				&::before {
+					background: $yellow;
+					display: block;
+					content: '';
+					width: 2rem;
+					height: 5px;
+					margin: .5rem auto .5rem auto;
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 960px) {
+	#home {
+		.home {
+			width: 70%;
+			padding: 15rem 0 5rem 0;
+			h1 {
+				font-size: 2.3rem;
+				line-height: 2.5rem;
+			}
+			h2 {
+				font-size: 1.5rem;
+				line-height: 2.2rem;
+				letter-spacing: 0px;
+			}
+			p {
+				font-size: 1.2rem;
+			}
+			#timer {
+				#days, #hours, #minutes, #seconds {
+					width: 18%;
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 1680px) {
+	#home {
+		.home {
+			width: 60%;
+			padding: 15rem 0 5rem 0;
+		}
+	}
+}
+
+
+
+/* --------------------
+	FEATURES
+-------------------- */
+#features {
+	width: 100%;
+	padding: 10rem 0 0 0;
+	h2 {
+		margin: 0 auto 5rem auto;
+	}
+	.features {
+		width: 85%;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		align-content: space-between;
+		align-items: flex-start;
+		margin: 0 auto;
+		.item {
+			width: 100%;
+			padding: 0 3rem 3rem 3rem;
+			img {
+				width: 30%;
+				height: auto;
+			}
+			h3 {
+				font-size: 1.2rem;
+				font-weight: 900;
+				margin: .5rem auto .25rem auto;
+			}
+		}
+	}
+	.blocks {
+		background: $black;
+		width: 100%;
+		padding: 2rem 0;
+		margin: 5rem auto 0 auto;
+		.inner {
+			width: 75%;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
+			align-content: space-between;
+			align-items: flex-start;
+			margin: 0 auto;
+			.item {
+				width: 50%;
+				margin: 2rem auto;
+				p {
+					font-size: 1rem;
+					letter-spacing: .5px;
+					color: $white;
+					margin: 0;
+					&:first-of-type {
+						font-weight: 900;
+						font-size: 1.5rem;
+						letter-spacing: 3px;
+						&::after {
+							display: block;
+							background: $yellow;
+							content: '';
+							width: 2rem;
+							height: 5px;
+							margin: .8rem auto .5rem auto;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+	
+@media all and (min-width: 960px) {
+	#features {
+		.features {
+			.item {
+				width: 33%;
+			}
+		}
+		.blocks {
+			padding: 4rem 0;
+			.inner {
+				.item {
+					width: 25%;
+					margin: 0 auto;
+					p {
+						&:first-of-type {
+							font-size: 2rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 1680px) {
+	#features {
+		.features {
+			width: 70%;
+		}
+	}
+}
+
+
+
+/* --------------------
+	COIN INFORMATION
+-------------------- */
+#coinInformation {
+	background: $light-grey;
+	width: 100%;
+	padding: 10rem 0;
+	h2 {
+		margin: 0 auto 5rem auto;
+	}
+	.coinInformation {
+		width: 80%;
+		text-align: left;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		align-content: space-between;
+		align-items: center;
+		margin: 0 auto;
+		.item {
+			width: 100%;
+			font-size: 1rem;
+			padding: 0;
+			margin: 2rem auto;
+			.chart {
+				width: 300px;
+				height: 300px;
+			}
+			.doughnutTip,
+			.doughnutSummary,
+			.doughnutSummaryTitle,
+			.doughnutSummaryNumber {
+				display: none;
+			}
+			p {
+				margin: 0;
+			}
+			.block {
+				display: inline-block;
+				width: 1.1rem;
+				height: 1.1rem;
+				margin: 0 .5rem 0 0;
+				@include border-radius(5px);
+				&.grey { background: $grey; }
+				&.black { background: $black; }
+				&.orange { background: $orange; }
+				&.yellow { background: $yellow; }
+				&.orange { background: $orange; }
+				&.lime { background: $lime; }
+				&.blue { background: $blue; }
+			}
+		}
+	}
+	.tables {
+		width: 90%;
+		font-size: .8rem;
+		text-align: left;
+		margin: 0 auto;
+		overflow-x: auto;
+		table {
+			width: 100%;
+			margin: 5rem auto 0 auto;
+		}
+		caption {
+			font-size: 1.2rem;
+			font-weight: 900;
+			color: $black;
+			margin: 0 auto 1rem auto;
+		}
+		tr {
+			&:nth-child(even) {
+				background: rgba($border,.3);
+			}
+			&:nth-child(odd) {
+				background: rgba($white,.6);
+			}
+		}
+		td {
+			padding: .5rem 1rem;
+			border: 1px solid $border;
+		}
+		.coinSpecs {
+			td:nth-child(1) {
+				width: 65%;
+			}
+		}
+		.breakdown {
+			width: 100%;
+			tr:nth-child(1),
+			tr:nth-child(3) {
+				font-weight: 900;
+				color: $black;
+			}
+			td:nth-child(1) {
+				width: 40%;
+			}
+		}
+	}
+}
+
+@media all and (min-width: 960px) {
+	#coinInformation {
+		.coinInformation {
+			.item {
+				width: 30%;
+				padding: 0;
+				margin: 0 auto;
+			}
+		}
+		.tables {
+			font-size: .9rem;
+			.coinSpecs {
+				width: 40%;
+				td:nth-child(1) {
+					width: 60%;
+				}
+			}
+			.breakdown {
+				width: 60%;
+			}
+		}
+	}
+}
+
+@media all and (min-width: 1680px) {
+	#coinInformation {
+		.coinInformation {
+			width: 70%;
+		}
+	}
+}
+
+
+
+/* --------------------
+	ROADMAP
+-------------------- */
+#roadmap {
+	width: 100%;
+	padding: 10rem 0;
+	.flexContainer {
+		width: 80%;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: top;
+		margin: 0 auto;
+		.timeline {
+			position: relative;
+			width: 100%;
+			margin: 0 auto;
+			&::after {
+				background: $black;
+				content: '';
+				width: 4px;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				margin-left: -2px;
+			}
+		}
+		.container {
+			width: 100%;
+			margin: 2rem auto 5rem auto;
+			position: relative;
+			&::after {
+				background: $white;
+				content: '';
+				position: absolute;
+				width: 1rem;
+				height: 1rem;
+				top: 1rem;
+				left: -1.7rem;
+				border: 4px solid $black;
+				@include border-radius(50%);
+				z-index: 1;
+			}
+			&.left {
+				left: 1rem;
+				text-align: left;
+				padding: .5rem 0 0 2rem;
+			}
+			&.right {
+				left: 1rem;
+				text-align: left;
+				padding: .5rem 0 0 2rem;
+			}
+		}
+		.content {
+			background: $black;
+			position: relative;
+			padding: 1rem 2rem;
+			@include border-radius(10px);
+			P {
+				&:first-child {
+					font-weight: 700;
+					font-size: 1.4rem;
+					color: $yellow;
+					margin: .5rem 0;
+				}
+			}
+			ul { 
+				padding: 0 0 1rem 0;
+				li {
+					display: flex;
+					font-size: .9rem;
+					color: $white;
+					&::before {
+						font-family: $font-awesome;
+						content: '-';
+						margin: 0 .7rem 0 1rem;
+					}
+					&.check::before {
+						font-family: $font-awesome;
+						content: '\f00c';
+						color: $yellow;
+						margin: 0 .5rem
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 960px) {
+	#roadmap {
+		.flexContainer {
+			width: 75%;
+			margin: 5rem auto 0 auto;
+			.timeline {
+				width: 100%;
+				margin: 0 auto;
+				&::after {
+					left: 50%;
+				}
+			}
+			.container {
+				width: 50%;
+				&::after {
+					left: auto;
+					right: -12px;
+				}
+				&.left {
+					left: -25%;
+					text-align: left;
+					padding: .5rem 3rem 0 2rem;
+				}
+				&.right {
+					left: 25%;
+					text-align: left;
+					padding: .5rem 2rem 0 3rem;
+					&::after {
+						left: -13px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 1680px) {
+	#roadmap {
+		.flexContainer {
+			width: 60%;
+		}
+	}
+}
+
+
+
+/* --------------------
+	DOWNLOADS
+-------------------- */
+#downloads {
+	background: $light-grey;
+	width: 100%;
+	padding: 10rem 0 7rem 0;
+	.downloads {
+		width: 75%;
+		margin: 0 auto;
+	}
+	@media all and (min-width: 960px) {
+		.downloads {
+			width: 50%;
+		}
+	}
+}
+
+
+
+/* --------------------
+	WHITEPAPER
+-------------------- */
+#whitepaper {
+	background: $yellow;
+	width: 100%;
+	padding: 10rem 0 7rem 0;
+	.whitepaper {
+		width: 75%;
+		margin: 0 auto;
+	}
+}
+
+@media all and (min-width: 960px) {
+	#whitepaper {
+		.whitepaper {
+			width: 50%;
+		}
+	}
+}
+
+
+
+/* --------------------
+	GUIDES
+-------------------- */
+#guides {
+	background: $white;
+	width: 100%;
+	padding: 10rem 0 20rem 0;
+	h1 {
+		margin: 0 auto 3rem auto;
+	}
+	.guides {
+		width: 75%;
+		margin: 0 auto;
+	}
+}
+
+@media all and (min-width: 960px) {
+	#guides {
+		padding: 15rem 0 20rem 0;
+		.guides {
+			width: 50%;
+		}
+	}
+}
+
+
+
+/* --------------------
+	TEAM
+-------------------- */
+#team {
+	background: $white;
+	width: 100%;
+	padding: 10rem 0 20rem 0;
+	h1 {
+		margin: 0 auto 5rem auto;
+	}
+	.team {
+		width: 85%;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		align-content: space-between;
+		align-items: top;
+		margin: 0 auto;
+		.item {
+			width: 100%;
+			text-align: left;
+			padding: 0 2rem;
+			margin: 0 auto 5rem auto;
+			img {
+				width: 100%;
+				margin: 0 auto 1rem auto;
+			}
+			h2 {
+				font-size: 1.3rem;
+				margin: 0 0 .5rem 0;
+				&::after {
+					background: $border;
+					display: block;
+					content: '';
+					height: 1px;
+					width: 100%;
+					margin: .5rem 0 0 0;
+				}
+			}
+			p:first-of-type {
+				font-size: .9rem;
+			}
+			.social {
+				ul li {
+					display: inline-block;
+					margin: 0 1rem 0 0;
+					a {
+						background: $yellow;
+						display: table-cell;
+						vertical-align: middle;
+						width: 3rem;
+						height: 3rem;
+						font-size: 1rem;
+						text-align: center;
+						border: 1px solid $yellow;
+						@include border-radius(50%);
+						&:hover {
+							background: $border;
+							border: 1px solid $border;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 960px) {
+	#team {
+		padding: 15rem 0 20rem 0;
+		.team {
+			width: 70%;
+			.item {
+				width: 30%;
+			}
+		}
+	}
+}
+
+
+
+/* --------------------
+	FOOTER
+-------------------- */
+.footerContainer {
+	background: $black;
+	width: 100%;
+	height: 400px;
+	text-align: center;
+	padding: 5rem 0 0 0;
+	margin: 0 auto;
+	position: fixed;
+	bottom: 0;
+	z-index: -1;
+	overflow: hidden;
+	@include transition(all .25s ease-out);
+	.inner {
+		width: 85%;
+		text-align: center;
+		margin: 0 auto;
+		h2 {
+			font-weight: 700;
+			font-size: 1.5rem;
+			color: $white;
+			margin: 0 auto 1rem auto;
+		}
+		.social {
+			width: 100%;
+			text-align: center;
+			cursor: default;
+			ul li {
+				display: inline-block;
+				margin: 0 .2rem;
+				a {
+					font-family: 'FontAwesome';
+					font-size: 1.5rem;
+					color: $white;
+					padding: .5rem;
+					&:hover {
+						color: $yellow;
+					}
+				}
+			}
+		}
+		.contact {
+			margin: 4rem auto;
+			h2 {
+				font-size: 1.2rem;
+				margin: 0 auto;
+			}
+			a {
+				font-size: .8rem;
+				letter-spacing: 1px;
+				color: $white;
+				&:hover {
+					color: $yellow;
+				}
+			}
+		}
+		.copyright {
+			width: 80%;
+			margin: 0 auto;
+			p {
+				font-family: $nunito;
+				font-size: .7rem;
+				letter-spacing: 1.5px;
+				line-height: 1.5rem;
+				text-transform: none;
+				color: $grey;
+				margin: 1rem auto .5rem auto;
+				a {
+					color: $grey;
+					&:hover {
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 960px) {
+	.footerContainer {
+		padding: 6rem 0 0 0;
+		.inner {
+			.contact {
+				margin: 3.5rem auto 5rem auto;
+			}
+		}
+	}
+}
+
+
+
+/* --------------------
+	PAGE 404
+-------------------- */
+.page404 {
+	width: 85%;
+	font-family: $nunito;
+	text-align: center;
+	padding: 15rem 0 20rem 0;
+	margin: 0 auto;
+	overflow: hidden;
+	
+	p.small {
+		font-size: .9rem;
+		font-weight: 300;
+	}
+	p {
+		font-size: 2.5rem;
+		font-weight: 900;
+		line-height: 3.5rem;
+		color: $black;
+	}
+}
+
+@media all and (min-width: 960px) {
+	.page404 {
+		width: 50%;
+		min-height: 100vh;
+		p.small {
+			font-size: 1.2rem;
+		}
+		p {
+			font-size: 3.5rem;
+			margin: 0 auto 2rem auto;
+		}
+	}
+}
+
+

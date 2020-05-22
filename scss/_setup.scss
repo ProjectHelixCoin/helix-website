@@ -1,0 +1,124 @@
+
+
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,700,900");
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false ) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+
+    @if $asset-pipeline == true {
+      src: font-url('#{$file-path}.eot');
+      src: font-url('#{$file-path}.eot?#iefix')          format('embedded-opentype'),
+           font-url('#{$file-path}.woff')                format('woff'),
+           font-url('#{$file-path}.ttf')                 format('truetype'),
+           font-url('#{$file-path}.svg##{$font-family}') format('svg');
+    } @else {
+      src: url('#{$file-path}.eot');
+      src: url('#{$file-path}.eot?#iefix')               format('embedded-opentype'),
+           url('#{$file-path}.woff')                     format('woff'),
+           url('#{$file-path}.ttf')                      format('truetype'),
+           url('#{$file-path}.svg##{$font-family}')      format('svg');
+    }
+  }
+}
+
+@include font-face(FontAwesome, webfonts/fontawesome/fontawesome-webfont);
+
+$nunito: "Nunito Sans", sans-serif;
+$font-awesome: "FontAwesome";
+
+
+// Colors
+$white: #fff;
+$black: #121212;
+$grey: #5d5d5d;
+$light-grey: #f6f6f6;
+$yellow: #fabd24;
+$orange: #ff5851;
+$blue: #4daae9;
+$lime: #a0cd5c;
+$green: #14B368;
+$border: #c4cbc5;
+
+// Text Reveal
+$animation-delay: 2s;
+$duration: 800ms;
+$iterations: 1;
+
+// Border Sizing
+@mixin box-sizing($box-model) {
+	-webkit-box-sizing: $box-model;
+	-moz-box-sizing: $box-model;
+	-ms-box-sizing: $box-model;
+	-o-box-sizing: $box-model;
+	box-sizing: $box-model;
+}
+
+// Transition
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-ms-transition: $transition;
+	-o-transition: $transition;
+	transition: $transition;
+}
+
+// Transform
+@mixin transform($transform) {
+	-webkit-transform: $transform;
+	-moz-transform: $transform;
+	-ms-transform: $transform;
+	-o-transform: $transform;
+	transform: $transform;
+}
+
+// Rotation
+@mixin rotate($degrees) {
+	-webkit-transform: rotate($degrees);
+	-moz-transform: rotate($degrees);
+	-ms-transform: rotate($degrees);
+	-o-transform: rotate($degrees);
+	transform: rotate($degrees);
+}
+
+// Border-radius
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+}
+
+// Appearance
+@mixin appearance($appearance) {
+	-webkit-appearance: $appearance;
+	-moz-appearance: $appearance;
+	-ms-appearance: $appearance;
+	-o-appearance: $appearance;
+	appearance: $appearance;
+}
+
+// Background 
+@mixin linear-gradient($linear-gradient) {
+	-webkit-linear-gradient: $linear-gradient;
+	-moz-linear-gradient: $linear-gradient;
+	-ms-linear-gradient: $linear-gradient;
+	-o-linear-gradient: $linear-gradient;
+	linear-gradient: $linear-gradient;
+}
+
+// Transform Origin
+@mixin transform-origin ($origin) {
+	-webkit-transform-origin: $origin;
+	-moz-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	-o-transform-origin: $origin;
+	transform-origin: $origin;
+}
+
+
