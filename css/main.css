@@ -1374,24 +1374,11 @@ hr {
 }
 
 #team .team .item .social ul li a {
-  background: #fabd24;
-  display: table-cell;
   vertical-align: middle;
   width: 3rem;
   height: 3rem;
   font-size: 1rem;
   text-align: center;
-  border: 1px solid #fabd24;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-}
-
-#team .team .item .social ul li a:hover {
-  background: #c4cbc5;
-  border: 1px solid #c4cbc5;
 }
 
 @media all and (min-width: 960px) {
