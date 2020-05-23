@@ -245,7 +245,7 @@ table {
 
 /* Exhange */
 .exchange {
-  margin: 0 auto 8rem auto;
+  margin: 0;
 }
 
 .exchange .btnExchange {
@@ -262,6 +262,31 @@ table {
 }
 
 .exchange .btnExchange:hover img {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.exchange-bottom {
+  margin: 0 auto 8rem auto;
+}
+
+.exchange-bottom .btnExchange {
+  display: inline-block;
+  margin: 0 .5rem 2rem .5rem;
+}
+
+.exchange-bottom .btnExchange img {
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.exchange-bottom .btnExchange:hover img {
   -webkit-transform: scale(1.05);
   -moz-transform: scale(1.05);
   -ms-transform: scale(1.05);
