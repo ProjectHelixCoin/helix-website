@@ -1126,6 +1126,11 @@ hr {
 /* --------------------
 	ROADMAP
 -------------------- */
+.whiteChar {
+  color: white !important;
+  margin-left: 4px;
+}
+
 #roadmap {
   width: 100%;
   padding: 10rem 0;
